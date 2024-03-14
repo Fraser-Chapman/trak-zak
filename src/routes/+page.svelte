@@ -15,6 +15,6 @@
 		<h2 class="h2">Trak Zak</h2>
 
 		<ProgressBar label="Progress Bar" min={0} value={progress} max={maxProgress} />
-
+		<h3>{daysLeftToGo} Days to go</h3>
 	</div>
 </div>
