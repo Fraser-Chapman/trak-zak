@@ -11,7 +11,7 @@
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-10 text-center w-full flex flex-col items-center">
+	<div class="space-y-10 text-center w-full m-5 flex flex-col items-center">
 		<h2 class="h2">Trak Zak</h2>
 		<ProgressBar label="Progress Bar" min={0} value={progress} max={maxProgress} />
 		<h3>{daysLeftToGo} Days to go</h3>
