@@ -2,6 +2,7 @@
 	import { ProgressBar } from '@skeletonlabs/skeleton';
 	import { differenceInCalendarDays } from 'date-fns';
 	import zakRunning from '$lib/assets/zak-running.gif'
+	import coastalCliffs from '$lib/assets/coastal-cliff.png'
 
 	const startDate: Date = new Date(2024, 2, 13);
 	const endDate: Date = new Date(2024, 3, 11)
@@ -14,7 +15,12 @@
 <div class="container h-full mx-auto flex justify-center items-center">
 	<div class="space-y-10 text-center w-full m-5 flex flex-col items-center">
 		<h2 class="h2">Trak Zak</h2>
-		<img src="{zakRunning}" alt="Animation of a man walking" width="10%" height="10%" />
+
+		<div class="flex flex-row justify-between">
+			<img src="{zakRunning}" alt="Animation of a man walking" width="10%" height="10%" />
+			<img src="{coastalCliffs}" alt="" width="10%" height="10%" />
+		</div>
+
 		<ProgressBar label="Progress Bar" min={0} value={progress} max={maxProgress} />
 		<h3>{daysLeftToGo} Days to go</h3>
 	</div>
