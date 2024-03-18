@@ -17,7 +17,7 @@
 		<h2 class="h2">Trak Zak</h2>
 
 		<div class="flex flex-row justify-between">
-			<img src="{zakRunning}" alt="Animation of a man walking" width="10%" height="10%" />
+			<img style="margin-left: {((progress / maxProgress) * 100) - 5}%" src="{zakRunning}" alt="Animation of a man walking" width="10%" height="10%" />
 			<img src="{coastalCliffs}" alt="" width="10%" height="10%" />
 		</div>
 
