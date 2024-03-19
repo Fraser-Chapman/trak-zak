@@ -9,9 +9,21 @@
 		<!-- App Bar -->
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<strong class="text-xl uppercase">Tissue Inc</strong>
+				<a
+					class="font-bold text-xl uppercase"
+					href="/"
+					rel="noreferrer"
+				>
+					Tissue Inc</a>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
+				<a
+					class="btn btn-sm variant-ghost-surface"
+					href="/credits"
+					rel="noreferrer"
+				>
+					Credits
+				</a>
 				<a
 					class="btn btn-sm variant-ghost-surface"
 					href="https://github.com/Fraser-Chapman/trak-zak"
