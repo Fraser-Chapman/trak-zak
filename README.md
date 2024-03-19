@@ -4,6 +4,8 @@ A non-serious project illustrating how far Zak is on his epic hike.
 
 ## Developing
 
+Requires Node 20.X
+
 Install dependencies with `npm install`
 
 ### Running Locally
