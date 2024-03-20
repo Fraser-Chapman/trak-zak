@@ -1,15 +1,16 @@
 <script lang="ts">
 	import { ProgressBar } from '@skeletonlabs/skeleton';
-	import { differenceInCalendarDays } from 'date-fns';
+	import { differenceInCalendarDays, differenceInMilliseconds } from 'date-fns';
 	import zakRunning from '$lib/assets/zak-running.gif'
 	import coastalCliffs from '$lib/assets/coastal-cliff.png'
 
 	const startDate: Date = new Date(2024, 2, 13);
 	const endDate: Date = new Date(2024, 3, 11)
 
+	const millisLeftToGo = differenceInMilliseconds(endDate, Date.now())
 	const daysLeftToGo = differenceInCalendarDays(endDate, Date.now())
-	const maxProgress = differenceInCalendarDays(endDate, startDate) + 1
-	const progress = maxProgress - daysLeftToGo
+	const maxProgress = differenceInMilliseconds(endDate, startDate) + 1
+	const progress = maxProgress - millisLeftToGo
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
