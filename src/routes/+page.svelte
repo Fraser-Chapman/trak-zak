@@ -12,7 +12,7 @@
 	const millisLeftToGo = differenceInMilliseconds(endDate, Date.now())
 	const daysLeftToGo = differenceInCalendarDays(endDate, Date.now()) >= 0 ? differenceInCalendarDays(endDate, Date.now()) : 0
 	const maxProgress = differenceInMilliseconds(endDate, startDate) + 1
-	const progress = maxProgress - millisLeftToGo
+	const progress = (maxProgress - millisLeftToGo) <= maxProgress ? (maxProgress - millisLeftToGo) : maxProgress
 
 	if (browser && progress >= maxProgress) {
 		initiateConfetti()
