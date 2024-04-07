@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { ProgressBar } from '@skeletonlabs/skeleton';
 	import { differenceInCalendarDays, differenceInMilliseconds } from 'date-fns';
+	import confetti from 'canvas-confetti';
 	import zakRunning from '$lib/assets/zak-running.gif'
+
 	import coastalCliffs from '$lib/assets/coastal-cliff.png'
 
 	const startDate: Date = new Date(2024, 2, 13);
@@ -11,6 +13,33 @@
 	const daysLeftToGo = differenceInCalendarDays(endDate, Date.now()) >= 0 ? differenceInCalendarDays(endDate, Date.now()) : 0
 	const maxProgress = differenceInMilliseconds(endDate, startDate) + 1
 	const progress = maxProgress - millisLeftToGo
+
+	if (progress >= maxProgress) {
+		initiateConfetti()
+	}
+
+	function initiateConfetti() {
+		const duration = 15 * 1000;
+		const animationEnd = Date.now() + duration;
+		const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+		function randomInRange(min: number, max: number) {
+			return Math.random() * (max - min) + min;
+		}
+
+		const interval = setInterval(() => {
+			const timeLeft = animationEnd - Date.now();
+
+			if (timeLeft <= 0) {
+				return clearInterval(interval);
+			}
+
+			const particleCount = 50 * (timeLeft / duration);
+			// since particles fall down, start a bit higher than random
+			confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+			confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+		}, 250);
+	}
 </script>
 
 <div class="container h-full mx-auto flex justify-center items-center">
