@@ -8,7 +8,7 @@
 	const endDate: Date = new Date(2024, 3, 11)
 
 	const millisLeftToGo = differenceInMilliseconds(endDate, Date.now())
-	const daysLeftToGo = differenceInCalendarDays(endDate, Date.now())
+	const daysLeftToGo = differenceInCalendarDays(endDate, Date.now()) >= 0 ? differenceInCalendarDays(endDate, Date.now()) : 0
 	const maxProgress = differenceInMilliseconds(endDate, startDate) + 1
 	const progress = maxProgress - millisLeftToGo
 </script>
