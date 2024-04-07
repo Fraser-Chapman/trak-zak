@@ -3,8 +3,8 @@
 	import { differenceInCalendarDays, differenceInMilliseconds } from 'date-fns';
 	import confetti from 'canvas-confetti';
 	import zakRunning from '$lib/assets/zak-running.gif'
-
 	import coastalCliffs from '$lib/assets/coastal-cliff.png'
+	import { browser } from '$app/environment';
 
 	const startDate: Date = new Date(2024, 2, 13);
 	const endDate: Date = new Date(2024, 3, 11)
@@ -14,7 +14,7 @@
 	const maxProgress = differenceInMilliseconds(endDate, startDate) + 1
 	const progress = maxProgress - millisLeftToGo
 
-	if (progress >= maxProgress) {
+	if (browser && progress >= maxProgress) {
 		initiateConfetti()
 	}
 
