@@ -19,7 +19,7 @@
     "@sveltejs/vite-plugin-svelte": "^4.0.1",
     "@types/canvas-confetti": "^1.6.4",
     "@types/node": "22.10.2",
-    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/eslint-plugin": "^8.21.0",
     "@typescript-eslint/parser": "^8.15.0",
     "autoprefixer": "10.4.20",
     "date-fns": "^4.1.0",
